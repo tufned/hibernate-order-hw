@@ -20,7 +20,7 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "ticket_id")
+    @JoinColumn(name = "order_id")
     private List<Ticket> tickets;
     @Column(name = "order_date")
     private LocalDateTime orderDate;
@@ -66,7 +66,7 @@ public class Order {
                 + "id=" + id
                 + ", tickets=" + tickets.toString()
                 + ", orderDate=" + orderDate.toString()
-                + ", user=" + user.toString()
+                + ", user=" + user.getId()
                 + '}';
     }
 }
